@@ -18,7 +18,7 @@ router.post("/posts", (req, res, next) => {
 //Read - get : all posts ---> Get: Model.find()
 router.get("/posts", async (req, res, next) => {
     try{
-        const posts = await Post.find()
+        const posts = await Post.find().populate("comments");
         res.json(posts);
     }
     catch(err){
@@ -31,7 +31,7 @@ router.get("/posts", async (req, res, next) => {
 router.get("/posts/:id", ValidId, async (req, res, next) => {
     try{
         const { id } = req.params;
-        const postDetails = await Post.findById(id);
+        const postDetails = await Post.findById(id).populate("comments");
         res.json(postDetails);
     }
     catch(err){
