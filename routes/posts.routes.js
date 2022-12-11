@@ -7,7 +7,11 @@ const ValidId = require("../middleware/ValidId")
 //Create - post: create new post
 router.post("/posts", (req, res, next) => {
     // console.log(req.body);
-    Post.create(req.body)
+    const { title, wovenCraft, date, text, image } = req.body;
+    // const { id } = req.params;
+    console.log(req.body)
+
+    Post.create({ title, wovenCraft, date, text, image})
     .then((createdPost) => {
         res.json(createdPost);
     })
