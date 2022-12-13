@@ -3,7 +3,7 @@
 const router = require("express").Router();
 
 const Post = require("../models/Post.model");
-const ValidId = require("../middleware/ValidId")
+const ValidId = require("../middleware/ValidId");
 //Create - post: create new post
 router.post("/posts", (req, res, next) => {
     // console.log(req.body);
@@ -22,6 +22,8 @@ router.post("/posts", (req, res, next) => {
 //Read - get : all posts ---> Get: Model.find()
 router.get("/posts", async (req, res, next) => {
     try{
+        //Model.find()
+        //.populate to get the data from comments
         const posts = await Post.find().populate("comments");
         res.json(posts);
     }

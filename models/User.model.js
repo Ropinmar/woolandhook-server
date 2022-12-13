@@ -6,6 +6,7 @@ const userSchema = new Schema(
     name: {
       type: String,
       required: [true, "Name is required."],
+      trim: true,
     },
     lastName: {
       type: String,
@@ -22,6 +23,7 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: [true, "Password is required."],
+      trim: true,
     },
     dateOfBirth: {
       type: Date,
@@ -38,6 +40,18 @@ const userSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "Post"
     }
+    ],
+    comments: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Comment"
+      }
+    ],
+    events: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Event"
+      }
     ]
     
   },
