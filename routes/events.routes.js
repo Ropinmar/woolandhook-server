@@ -4,6 +4,7 @@ const Event = require("../models/Event.model");
 const User = require("../models/User.model")
 const mongoose = require("mongoose");
 const ValidId = require("../middleware/ValidId");
+const moment = require("moment")
 
 
 //Routes------------------------------
