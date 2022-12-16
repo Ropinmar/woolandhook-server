@@ -87,7 +87,7 @@ router.post("/signup", (req, res, next) => {
             lastName
         }
       };
-      console.log(data);
+      // console.log(data);
       axios.post("https://api.emailjs.com/api/v1.0/email/send", data)
       .then(console.log)
       .catch(console.log)
