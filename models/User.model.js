@@ -24,6 +24,7 @@ const userSchema = new Schema(
       type: String,
       required: [true, "Password is required."],
       trim: true,
+      minLength: 8
     },
     dateOfBirth: {
       type: Date,

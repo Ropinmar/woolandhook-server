@@ -9,6 +9,7 @@ const eventSchema = new Schema({
         type: String,
         required: [true, "title is required."],
         trim: true,
+        minLength: 3
     },
     description: {
         type: String,
@@ -38,3 +39,12 @@ const eventSchema = new Schema({
 });
 
 module.exports = model("Event", eventSchema);
+
+// // Conocer los procedimientos para cada dinámica de los distintos juegos
+// dentro del casino (black Jack, ruleta, punto y banca, torneo de póker,
+//     póker winner, póker Texas holdem y mesa libre.), tener excelente 
+//     atención al cliente, realizar cuentasmatemáticas con rapidez y 
+// exactitud para que se garantice el desarrollo
+//     del juego, tener siempre una buena presentación personal, estar
+//     dispuesto a ayudar.
+//     // 
